@@ -3,6 +3,7 @@ package org.example.user;
 import org.example.account.AccountService;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class UserService {
 
@@ -40,6 +41,6 @@ public class UserService {
     }
 
     public List<User> getAllUsers(){
-        return userMap.values().stream().toList();
+        return userMap.values().stream().collect(Collectors.toList());
     }
 }

@@ -31,7 +31,7 @@ public class AccountService {
         return accountMap.values()
                 .stream()
                 .filter(account -> account.getUserId() == userId)
-                .toList();
+                .collect(Collectors.toList());
 
     }
 
@@ -43,7 +43,7 @@ public class AccountService {
             throw new IllegalArgumentException("Cannot deposit not positive amount: amount%s".formatted(moneyToDeposit));
         }
 
-        account.setMoneyAccount(account.getMoneyAccount() + moneyToDeposit);
+        account.setMoneyAmount(account.getMoneyAmount() + moneyToDeposit);
     }
 
 }
